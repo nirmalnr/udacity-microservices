@@ -21,9 +21,11 @@ script:
   - docker tag api-feed nirmalnr/api-feed:latest
   - docker tag api-user nirmalnr/api-user:latest
   - docker tag frontend nirmalnr/frontend:latest
+  - docker tag revproxy nirmalnr/revproxy:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push nirmalnr/api-feed
   - docker push nirmalnr/api-user
   - docker push nirmalnr/frontend
+  - docker push nirmalnr/revproxy
