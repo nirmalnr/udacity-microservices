@@ -15,7 +15,7 @@ RUN npm install
 COPY . .
 
 # Build the app
-RUN npm build
+RUN npm run build
 
 # Set the API’s port number
 EXPOSE 8080
